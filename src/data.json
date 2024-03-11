@@ -1,0 +1,76 @@
+{
+  "data": [
+    {
+      "title": "Market Analysis Report",
+      "desc": "Emerging Tech Trends",
+      "done": true,
+      "date": "12/03/2024"
+    },
+    {
+      "title": "User Experience Workshop",
+      "desc": "Design Thinking Approach",
+      "done": false,
+      "date": "13/03/2024"
+    },
+    {
+      "title": "Development Sprint Planning",
+      "desc": "Mobile App Version 2.0",
+      "done": false,
+      "date": "14/03/2024"
+    },
+    {
+      "title": "Product Launch Review",
+      "desc": "E-commerce Platform",
+      "done": true,
+      "date": "15/03/2024"
+    },
+    {
+      "title": "Security Compliance Check",
+      "desc": "Annual IT Audit",
+      "done": true,
+      "date": "16/03/2024"
+    },
+    {
+      "title": "Stakeholder Meeting",
+      "desc": "Quarterly Business Review",
+      "done": false,
+      "date": "17/03/2024"
+    },
+    {
+      "title": "Team Building Activity",
+      "desc": "Remote Escape Room",
+      "done": true,
+      "date": "18/03/2024"
+    },
+    {
+      "title": "Content Strategy Session",
+      "desc": "Social Media Plan Q2",
+      "done": false,
+      "date": "19/03/2024"
+    },
+    {
+      "title": "Tech Stack Evaluation",
+      "desc": "Microservices Architecture",
+      "done": true,
+      "date": "20/03/2024"
+    },
+    {
+      "title": "Client Onboarding Process",
+      "desc": "New CRM Implementation",
+      "done": false,
+      "date": "21/03/2024"
+    },
+    {
+      "title": "Website Performance Audit",
+      "desc": "SEO and Speed Optimization",
+      "done": true,
+      "date": "22/03/2024"
+    },
+    {
+      "title": "Sales Strategy Workshop",
+      "desc": "Lead Generation Techniques",
+      "done": false,
+      "date": "23/03/2024"
+    }
+  ]
+}

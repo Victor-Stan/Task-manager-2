@@ -7,7 +7,7 @@ const Header = () => {
         <h1 className="text-2xl font-bold" id="yeah">
           Today's Task
         </h1>
-        <span className="text-sm mt-1 font-light">Wednesday,11 May</span>
+        <span className="text-sm mt-1 font-light">Monday,11 March</span>
       </div>
       <div className=" ml-auto ">
         <button className="bg-blue-100  text-blue-700 font-medium text-sm p-1 w-55 rounded-xl inline-flex items-center my-auto">
