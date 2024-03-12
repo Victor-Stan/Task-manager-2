@@ -9,7 +9,7 @@ interface Todo {
 
 interface TaskCountProps {
   todos: Todo[];
-  setFilteredTodos: React.Dispatch<React.SetStateAction<Todo[]>>; // Add setFilteredTodos prop
+  setFilteredTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 }
 
 const TaskCount: React.FC<TaskCountProps> = ({ todos, setFilteredTodos }) => {
@@ -17,7 +17,7 @@ const TaskCount: React.FC<TaskCountProps> = ({ todos, setFilteredTodos }) => {
 
   const handleTabClick = (tab: string) => {
     setSelectedTab(tab);
-    // Filter todos based on the selected tab and update filteredTodos state
+
     if (tab === "open") {
       setFilteredTodos(todos.filter((todo) => !todo.done));
     } else if (tab === "closed") {
