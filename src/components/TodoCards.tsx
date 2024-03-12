@@ -4,7 +4,7 @@ import data from "../data.json";
 
 const TodoCards = () => {
   return (
-    <div className="flex flex-col flex justify-center items-center space-y-10">
+    <div className="flex flex-col justify-center items-center space-y-10">
       {data.data.map((item, index) => (
         <div
           key={index}

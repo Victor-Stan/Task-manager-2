@@ -26,7 +26,7 @@ const TaskCount: React.FC<TaskCountProps> = ({ todos }) => {
       </div>
       <span className="text-slate-300">|</span>
       <div>
-        <span className="text-blue-800 font-semibold text-sm">Open</span>
+        <span className="text-slate-400 font-semibold text-sm">Open</span>
         <span className="border text-white bg-slate-300 text-xs ml-1 px-1 w-6 h-5.5  rounded-xl text-center">
           {openCount}
         </span>
