@@ -10,12 +10,18 @@ const App = () => {
 
   const [filteredTodos, setFilteredTodos] = useState(todos);
 
+  const toggleTodo = (index: number) => {
+    const updatedTodos = [...todos];
+    updatedTodos[index].done = !updatedTodos[index].done;
+    setTodos(updatedTodos);
+  };
+
   return (
     <div className="flex flex-col w-full bg-slate-50 h-screen p-7">
       <Header setTodos={setTodos} updateFilteredTodos={setFilteredTodos} />
 
       <TaskCount todos={todos} setFilteredTodos={setFilteredTodos} />
-      <TodoCards todos={filteredTodos} />
+      <TodoCards todos={filteredTodos} toggleTodo={toggleTodo} />
     </div>
   );
 };

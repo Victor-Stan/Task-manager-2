@@ -1,5 +1,4 @@
 import React from "react";
-import { IoCheckmarkCircle } from "react-icons/io5";
 import Images from "./Images";
 
 interface Todo {
@@ -11,9 +10,10 @@ interface Todo {
 
 interface TodoCardsProps {
   todos: Todo[];
+  toggleTodo: (index: number) => void;
 }
 
-const TodoCards: React.FC<TodoCardsProps> = ({ todos }) => {
+const TodoCards: React.FC<TodoCardsProps> = ({ todos, toggleTodo }) => {
   return (
     <div className="flex flex-col justify-center items-center space-y-10">
       {todos.map((item, index) => (
@@ -29,7 +29,12 @@ const TodoCards: React.FC<TodoCardsProps> = ({ todos }) => {
             >
               {item.title}
             </h1>
-            <IoCheckmarkCircle className="ml-auto text-3xl text-blue-700" />
+            <input
+              type="checkbox"
+              checked={item.done}
+              onChange={() => toggleTodo(index)}
+              className="ml-auto text-3xl text-blue-700"
+            />
           </div>
           <span className="text-slate-400 text-sm">{item.desc}</span>
           <div className="border mt-2"></div>
