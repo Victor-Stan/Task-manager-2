@@ -1,4 +1,4 @@
-import { useState } from "react";
+import  { useState } from "react";
 import Header from "./components/Header";
 import TaskCount from "./components/TaskCount";
 import TodoCards from "./components/TodoCards";
@@ -16,12 +16,17 @@ const App = () => {
     setTodos(updatedTodos);
   };
 
+  const deleteTodo = (index: number) => {
+    const updatedTodos = [...todos];
+    updatedTodos.splice(index, 1);
+    setTodos(updatedTodos);
+  };
+
   return (
     <div className="flex flex-col w-full bg-slate-50 h-screen p-7">
       <Header setTodos={setTodos} updateFilteredTodos={setFilteredTodos} />
-
       <TaskCount todos={todos} setFilteredTodos={setFilteredTodos} />
-      <TodoCards todos={filteredTodos} toggleTodo={toggleTodo} />
+      <TodoCards todos={filteredTodos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>
   );
 };
