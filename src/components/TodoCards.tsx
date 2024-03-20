@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Images from "./Images";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit } from "react-icons/fi";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 interface Todo {
   title: string;
@@ -105,24 +106,29 @@ const TodoCards: React.FC<TodoCardsProps> = ({
           </div>
           {editingIndex === index && (
             <div className="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg rounded-lg p-6">
-              <input
-                type="text"
-                name="title"
-                value={editedTitle}
-                onChange={handleChange}
-              />
-              <textarea
-                name="desc"
-                value={editedDesc}
-                onChange={handleChange}
-              ></textarea>
-              <input
-                type="date"
-                name="date"
-                value={editedDate}
-                onChange={handleChange}
-              />
-              <button onClick={handleConfirmEdit}>Confirm</button>
+              <Dialog>
+                <DialogTrigger>Click to Edit</DialogTrigger>
+                <DialogContent>
+                  <input
+                    type="text"
+                    name="title"
+                    value={editedTitle}
+                    onChange={handleChange}
+                  />
+                  <textarea
+                    name="desc"
+                    value={editedDesc}
+                    onChange={handleChange}
+                  ></textarea>
+                  <input
+                    type="date"
+                    name="date"
+                    value={editedDate}
+                    onChange={handleChange}
+                  />
+                  <button onClick={handleConfirmEdit}>Confirm</button>
+                </DialogContent>
+              </Dialog>
             </div>
           )}
         </div>
