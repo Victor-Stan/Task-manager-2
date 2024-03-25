@@ -4,6 +4,13 @@ import TaskCount from "./components/TaskCount";
 import TodoCards from "./components/TodoCards";
 import data from "./data.json";
 
+interface Todo {
+  title: string;
+  desc: string;
+  done: boolean;
+  date: string;
+}
+
 const App = () => {
   const initialTodos = data.data;
   const [todos, setTodos] = useState(initialTodos);
@@ -20,12 +27,14 @@ const App = () => {
     const updatedTodos = [...todos];
     updatedTodos.splice(index, 1);
     setTodos(updatedTodos);
+    setFilteredTodos(updatedTodos);
   };
 
-  const editTodo = (index: number, updatedTodo: any) => {
+  const editTodo = (index: number, updatedTodo: Todo) => {
     const updatedTodos = [...todos];
     updatedTodos[index] = updatedTodo;
     setTodos(updatedTodos);
+    setFilteredTodos(updatedTodos);
   };
 
   return (
