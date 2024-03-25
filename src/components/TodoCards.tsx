@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Images from "./Images";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit } from "react-icons/fi";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 interface Todo {
   title: string;
@@ -79,7 +79,7 @@ const TodoCards: React.FC<TodoCardsProps> = ({
             </h1>
             <div>
               <FiEdit
-                className="text-blue-700 text-sm m-1"
+                className="text-blue-700 text-sm m-1 cursor-pointer"
                 onClick={() => handleEditClick(index)}
               />
             </div>
@@ -92,7 +92,7 @@ const TodoCards: React.FC<TodoCardsProps> = ({
               />
 
               <RiDeleteBin6Line
-                className="text-red-700 text-lg"
+                className="text-red-700 text-lg cursor-pointer"
                 onClick={() => deleteTodo(index)}
               />
             </div>
@@ -106,8 +106,7 @@ const TodoCards: React.FC<TodoCardsProps> = ({
           </div>
           {editingIndex === index && (
             <div className="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg rounded-lg p-6">
-              <Dialog>
-                <DialogTrigger>Click to Edit</DialogTrigger>
+              <Dialog open={editingIndex !== null}>
                 <DialogContent>
                   <input
                     type="text"
