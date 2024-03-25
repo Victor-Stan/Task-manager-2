@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GoPlus } from "react-icons/go";
 
 interface HeaderProps {
@@ -18,6 +18,23 @@ const Header: React.FC<HeaderProps> = ({ setTodos, updateFilteredTodos }) => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [date, setDate] = useState("");
+  const [currentDate, setCurrentDate] = useState("");
+
+  useEffect(() => {
+    const getCurrentDate = () => {
+      const options: Intl.DateTimeFormatOptions = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      };
+      const today = new Date();
+      const formattedDate = today.toLocaleDateString(undefined, options);
+      setCurrentDate(formattedDate);
+    };
+
+    getCurrentDate();
+  }, []);
 
   const handleNewTaskClick = () => {
     setShowForm(true);
@@ -49,7 +66,7 @@ const Header: React.FC<HeaderProps> = ({ setTodos, updateFilteredTodos }) => {
         <h1 className="text-2xl font-bold" id="yeah">
           Today's Task
         </h1>
-        <span className="text-sm mt-1 font-light">Monday, 11 March</span>
+        <span className="text-sm mt-1 font-light">{currentDate}</span>
       </div>
       <div className="ml-auto">
         <button
